@@ -1,3 +1,6 @@
+import unittest
+
+
 class Pets:
     """Класс питомцы"""
     counter = 0
@@ -15,13 +18,13 @@ class Pets:
         self.is_valid_kind_breed(self.kind, self.breed)
         self.name = name
         self.age = age
-        Pets.__count()
+        self.__count()
         self.__add_to_registr()
 
-    @staticmethod
-    def __count():
+    @classmethod
+    def __count(cls):
         """Счетчик созданных экземпляров"""
-        Pets.counter += 1
+        cls.counter += 1
 
     @property
     def kind(self) -> str:
@@ -193,21 +196,4 @@ class Dog(Pets):
 
 
 if __name__ == "__main__":
-    # Write your solution here
-    pet = Pets("cat", "maincoon", "hulk", 10)
-    # print(pet.name)
-    # pet.name = "123"
-    # print(pet.name)
-    # print(Pets.is_valid_kind_breed("1", "1234"))
-    # print(Pets.counter)
-    pet2 = Pets("asd", "asdff", "ddd", 33)
-    # print(Pets.counter)
-    pet3 = Pets("asd", "asdff", "ddd", 333)
-    # print(Pets.counter)
-    # print(pet)
-    cat1 = Cat("maincoon", "jerry", 11, "высокая")
-    # print(cat1)
-    dog1 = Dog("Пит", "кратос", 2, "средний")
-    print(dog1)
-    print(dog1.security_qualities)
-
+    unittest.main()
